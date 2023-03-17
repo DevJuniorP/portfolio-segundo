@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ESTILOS GERAIS */
+
+:root{
+    --clr-black-1: #222;
+    --clr-black-2: #34353a;
+    --clr-black-3: #121214;
+    --clr-text: #a8a8b3;
+    --clr-white-1: #fff;
+    --clr-purple: #633BBC;
+    --clr-green: #30fe6c;
+
+    --font-nunito:'Nunito', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-comfortaa:'Comfortaa', cursive;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-poppins);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid var(--clr-black-2);
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header .logo{
+    position: relative;
+    font-weight: 600;
+    font-size: 2em;
+    color: var(--clr-white-1);
+}
+
+header .logo span{
+    color: var(--clr-green);
+    font-weight: 700;   
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    gap: 50px;
+}
+
+header ul li a{
+    font-weight: 500;
+    color: var(--clr-white-1);
+    font-size: 1.25em;
+    transition: all 0.3s ease-in-out;
+}
+
+header ul li a:hover{
+    color: var(--clr-green);
+}
+
+@media(max-width: 900px) {
+    header{
+        padding: 20px 50px;
+        background: transparent;
+
+        backdrop-filter: blur(10px);
+    }
+
+    .menuToggle{
+        position: relative;
+        width: 30px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menuToggle::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transform: translateY(-10px);
+        transition: 0.5s;
+        box-shadow: 0 10px #fff;
+    }
+
+    .menuToggle::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transform: translateY(10px);
+        transition: 0.5s;
+    }
+
+    header.active .menuToggle::before{
+        transform: translateY(0px) rotate(45deg);
+        box-shadow: 0 0 #fff;
+    }
+
+    header.active .menuToggle::after{
+        transform: translateY(0px) rotate(315deg);
+    }
+
+    header ul{
+        display: none;
+    }
+
+    header.active ul{
+        position: fixed;
+        left: 0;
+        top: 83px;
+        width: 100%;
+        height: calc(100vh - 83px);
+        background-color: rgba(50, 50, 50, 0.90);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10000;
+        gap: 20px;
+    }
+
+    header.active ul li a{
+        font-size: 2em;
+    }
+}
+
+/* HOME */
+
+#home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--clr-black-3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+}
+
+#home .content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 650px;
+    z-index: 10;
+}
+
+#home .content h2{
+    position: relative;
+    font-size: 5em;
+    color: var(--clr-green);
+}
+
+#home .content p{
+    position: relative;
+    color: var(--clr-white-1);
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+#home .astronauta{
+    border-radius: 40% 60% 70% 30% / 25% 45% 55% 75% ;
+    background-color: var(--clr-purple);
+}
+/* SOBRE */
+
+/* PORTFOLIO */
+
+/* CONTATO */
